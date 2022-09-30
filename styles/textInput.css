@@ -1,0 +1,14 @@
+.newValue{
+    border-radius: var(--radius-1);
+    border: 1px solid var(--color-grey-5);
+    width: 380px;
+    height: 44px;
+}
+
+.newValue:hover{
+    border: 1px solid var(--color-brand-1);
+}
+
+.newValue:focus{
+    border: 2px solid var(--color-brand-2);
+}

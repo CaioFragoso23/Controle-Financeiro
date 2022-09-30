@@ -8,10 +8,81 @@
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
     <meta name="description" content="Control Finance - Seu controle financeiro">
     <link rel="stylesheet" href="/styles/globalStyles.css">
+    <link rel="stylesheet" href="/styles/flex.css">
+    <link rel="stylesheet" href="/styles/positioning.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/styles/texts.css">
+    <link rel="stylesheet" href="/styles/buttons.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+    <link rel="stylesheet" href="/styles/textInput.css">
 </head>
 <body>
-    <main id="app"></main>
+    <header class="navbar fixed">
+        <nav class="navContent container flex align-items-center jc-space-between">
+            <img src="/assets/Control Finance Logo.svg" alt="Logo">
+            <button data-control-modal="insert-value" class="button-primary registerButton">Registrar Novo Valor</button>
+        </nav>
+    </header>
+    <main id="app" class=" container main flex flex-dir-column">
+        <div class="mainFront flex align-items-center jc-space-between">
+            <p class="title-1-bold mainTitle">Resumo financeiro</p>
+            <div class="tags">
+                <button class="button-outline">Todos</button>
+                <button class="button-outline">Entradas</button>
+                <button class="button-outline">Saídas</button>
+            </div>
+        </div>
+        <div class="tableSum flex align-items-center jc-space-between">
+            <p>Soma dos valores</p>
+            <p class="sum text-1-bold">R$:Valor,00</p>
+        </div>
+        <ul id="cardsContainer">
+            <li class="cardValue flex align-items-center jc-space-between">
+                <p>R$:Valor,00</p>
+                <div class="flex align-items-center">
+                    <button id="saida" class="button-greylow">Saída</button>
+                    <button class="button-delete"><img src="/assets/trash.svg" alt=""></button>
+                </div>
+            </li>
+            <li class="cardValue flex align-items-center jc-space-between">
+                <p>R$:Valor,00</p>
+                <div class="flex align-items-center">
+                    <button id="entrada" class="button-greylow">Entrada</button>
+                    <button class="button-delete"><img src="/assets/trash.svg" alt=""></button>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <div id="insert-value" class="modal-container fixed">
+        <div class="modal-content flex flex-dir-column">
+            <header class="flex align-items-center jc-space-between">
+                <p class="title-2-bold">Registro de valor</p>
+                <button data-control-modal="insert-value" class="button-greylow">X</button>
+            </header>
+            <form class="modalForm flex flex-dir-column">
+                <p class="text-2-medium">Digite o valor e em seguida aperte no botão referente ao tipo de valor</p>
+                <div>
+                    <p class="text-2-bold">Valor</p>
+                    <input class="newValue" type="number" placeholder="R$00,00">
+                </div>
+                <div class="selectTags">
+                    <p>Tipo de valor</p>
+                    <div class="tagButtons">
+                        <button class="button-greylow">Entradas</button>
+                        <button class="button-greylow">Saídas</button>
+                    </div>
+                </div>
+                <div class="modalFooter flex align-items-center jc-flex-end">
+                    <button class="button-outline">Cancelar</button>
+                    <button class="button-primary insertValue">Inserir Valor</button>
+                </div>
+            </form>
+        </div>
+        </div>
+
+
+    <!-- modal -->
     <script src="/scripts/modal.js"></script>
     <script src="valuesData.js"></script>
     <script src="index.js"></script>
