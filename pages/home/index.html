@@ -23,7 +23,7 @@
             <button data-control-modal="insert-value" class="button-primary registerButton">Registrar Novo Valor</button>
         </nav>
     </header>
-    <main id="app" class=" container main flex flex-dir-column">
+    <main id="app" class="container main flex flex-dir-column">
         <div class="mainFront flex align-items-center jc-space-between">
             <p class="title-1-bold mainTitle">Resumo financeiro</p>
             <div class="tags">
@@ -34,23 +34,10 @@
         </div>
         <div class="tableSum flex align-items-center jc-space-between">
             <p>Soma dos valores</p>
-            <p class="sum text-1-bold">R$:Valor,00</p>
+            <p id="sum" class="sum text-1-bold"></p>
         </div>
         <ul id="cardsContainer">
-            <li class="cardValue flex align-items-center jc-space-between">
-                <p>R$:Valor,00</p>
-                <div class="flex align-items-center">
-                    <button id="saida" class="button-greylow">Saída</button>
-                    <button class="button-delete"><img src="/assets/trash.svg" alt=""></button>
-                </div>
-            </li>
-            <li class="cardValue flex align-items-center jc-space-between">
-                <p>R$:Valor,00</p>
-                <div class="flex align-items-center">
-                    <button id="entrada" class="button-greylow">Entrada</button>
-                    <button class="button-delete"><img src="/assets/trash.svg" alt=""></button>
-                </div>
-            </li>
+           
         </ul>
     </main>
 
@@ -60,22 +47,22 @@
                 <p class="title-2-bold">Registro de valor</p>
                 <button data-control-modal="insert-value" class="button-greylow">X</button>
             </header>
-            <form class="modalForm flex flex-dir-column">
+            <form id="insertValueForm" class="modalForm flex flex-dir-column">
                 <p class="text-2-medium">Digite o valor e em seguida aperte no botão referente ao tipo de valor</p>
                 <div>
                     <p class="text-2-bold">Valor</p>
-                    <input class="newValue" type="number" placeholder="R$00,00">
+                    <input id="newValue" name="value" class="newValue" type="number" placeholder="R$00,00">
                 </div>
                 <div class="selectTags">
                     <p>Tipo de valor</p>
                     <div class="tagButtons">
-                        <button class="button-greylow">Entradas</button>
-                        <button class="button-greylow">Saídas</button>
+                        <button id="entrada" class="button-greylow">Entradas</button>
+                        <button id="saida" class="button-greylow">Saídas</button>
                     </div>
                 </div>
                 <div class="modalFooter flex align-items-center jc-flex-end">
                     <button class="button-outline">Cancelar</button>
-                    <button class="button-primary insertValue">Inserir Valor</button>
+                    <button id="insertValue" class="button-primary insertValue">Inserir Valor</button>
                 </div>
             </form>
         </div>

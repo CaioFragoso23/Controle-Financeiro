@@ -22,7 +22,10 @@
     border: 1px solid var(--color-grey-5);
     border-radius: 8px;
     padding: 12.5px;
+    margin-bottom: 12px;
 }
+
+
 
 @media (max-width: 700px){
     .navContent{
