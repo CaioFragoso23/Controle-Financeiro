@@ -27,9 +27,9 @@
         <div class="mainFront flex align-items-center jc-space-between">
             <p class="title-1-bold mainTitle">Resumo financeiro</p>
             <div class="tags">
-                <button class="button-outline">Todos</button>
-                <button class="button-outline">Entradas</button>
-                <button class="button-outline">Saídas</button>
+                <button class="button-outline filter-items">Todos</button>
+                <button class="button-outline filter-items">Entrada</button>
+                <button class="button-outline filter-items">Saída</button>
             </div>
         </div>
         <div class="tableSum flex align-items-center jc-space-between">
@@ -56,13 +56,13 @@
                 <div class="selectTags">
                     <p>Tipo de valor</p>
                     <div class="tagButtons">
-                        <button id="entrada" class="button-greylow">Entradas</button>
-                        <button id="saida" class="button-greylow">Saídas</button>
+                        <input type="radio" id="entrada" name="selectTag" value="1" class="inputRadio">Entradas</input>
+                        <input type="radio" id="saida" name="selectTag" value="2" class= "inputRadio" >Saídas</button>
                     </div>
                 </div>
                 <div class="modalFooter flex align-items-center jc-flex-end">
-                    <button class="button-outline">Cancelar</button>
-                    <button id="insertValue" class="button-primary insertValue">Inserir Valor</button>
+                    <button data-control-modal="insert-value" class="button-outline">Cancelar</button>
+                    <button id="insertValue" value="price" class="button-primary insertValue">Inserir Valor</button>
                 </div>
             </form>
         </div>
