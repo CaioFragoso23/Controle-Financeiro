@@ -43,6 +43,11 @@ function filterValues(){
 filterValues()
 
 const cardValue = ({id, value, categoryID}) => {
+    let data = {
+        id: id,
+        value: value,
+        categoryID: categoryID
+    }
 
     const cardsContainer = document.getElementById("cardsContainer")
 
@@ -82,8 +87,14 @@ const cardValue = ({id, value, categoryID}) => {
     buttonDelete.addEventListener("click", function(){
         let card = document.getElementById(id);
         card.remove();
+        insertedValues.splice((obj) => {
+            if(obj.id === id){
+                return obj.length
+            }
+        },1)
         tableSum = tableSum - value
         tableCardsSum.innerText = `R$:${tableSum}`
+        
     })
 
 
@@ -98,22 +109,6 @@ render(insertedValues)
 
 
 
-let submitModal = document.getElementById('insertValue')
-submitModal.addEventListener('click', (event) => {
-    event.preventDefault()
-    let submitValueModal = document.getElementById('newValue')
-    let radioModal = document.querySelector('input[name="selectTag"]:checked')
-    console.log(radioModal.value)
-    const data = {id: insertedValues.length + 1,
-         value: parseFloat(submitValueModal.value),
-         categoryID: parseInt(radioModal.value)}
-         
-
-    insertedValues.push(data)
-    render(insertedValues)
-    
-    
-})
 
 
 {/* <li class="cardValue flex align-items-center jc-space-between">

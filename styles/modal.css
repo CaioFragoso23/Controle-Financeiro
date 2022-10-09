@@ -17,6 +17,8 @@
     margin: 10% auto;
     padding: 24px;
     gap: 25px;
+    animation-name: animateModal;
+    animation-duration: var(--animation-duration);
 }
 
 .modalForm{
@@ -25,13 +27,20 @@
 
 .show-modal{
     display: block;
+
 }
 
-.show-modal .modal-container{
-    animation-name: animateModal;
-    animation-duration: var(--animation-duration);
-    animation-timing-function: var(--animation-type);
+@keyframes animateModal{
+    0%{
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
+
 
 .selectTags{
     display: flex;
@@ -46,6 +55,7 @@
 @media(max-width:700px){
     .modal-content{
         height: 70%;
+        max-width: 100%;
     }
     .selectTags{
         flex-direction: column;
@@ -61,13 +71,3 @@
     }
 }
 
-@keyframes animateModal{
-    0%{
-        transform: translateY(-50%);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
