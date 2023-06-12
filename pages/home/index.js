@@ -11,7 +11,12 @@ function render(array) {
         const card = cardValue(value)
         console.log(card)
         cardsContainer.appendChild(card)
-        tableSum = tableSum + value.value
+        if(value.categoryID === 1){
+            tableSum = tableSum - value.value
+        }
+        else{
+            tableSum = tableSum + value.value
+        }
         tableCardsSum.innerText = `R$:${tableSum}`
     })
     console.log(cardsContainer)
@@ -74,7 +79,7 @@ const cardValue = ({id, value, categoryID}) => {
         buttonCategory.innerText = "Entrada"
         li.classList.add("Entrada")
     }
-    else{
+    else if(categoryID === 1){
         buttonCategory.innerText = "Saída"
         li.classList.add("Saída")
     }
@@ -92,7 +97,12 @@ const cardValue = ({id, value, categoryID}) => {
                 return obj.length
             }
         },1)
-        tableSum = tableSum - value
+        if(categoryID === 0){
+            tableSum = tableSum - value
+        }
+        else if(categoryID === 1){
+            tableSum = tableSum + value
+        }
         tableCardsSum.innerText = `R$:${tableSum}`
         
     })
@@ -105,19 +115,6 @@ const cardValue = ({id, value, categoryID}) => {
 }
 render(insertedValues)
 
-
-
-
-
-
-
-{/* <li class="cardValue flex align-items-center jc-space-between">
-<p>R$:Valor,00</p>
-<div class="flex align-items-center">
-    <button id="saida" class="button-greylow">Saída</button>
-    <button class="button-delete"><img src="/assets/trash.svg" alt=""></button>
-</div>
-</li> */}
 
 
 
