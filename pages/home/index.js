@@ -1,4 +1,3 @@
-/* Desenvolva sua lógica aqui */
 let tableSum = 0
 function render(array) {
     tableSum = 0
@@ -114,7 +113,3 @@ const cardValue = ({id, value, categoryID}) => {
     return li
 }
 render(insertedValues)
-
-
-
-
